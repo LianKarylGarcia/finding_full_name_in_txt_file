@@ -29,3 +29,7 @@ def find_user_info(full_name_to_find): # Define the function find_user_info
     except FileNotFoundError:
         print("Error: 'user_info.txt' file not found.")
 
+if __name__ == "__main__": # Construct checks this variable to determine whether the script is being executed directly or imported.
+    print("Welcome to the User Information Finder!")
+    full_name = input("Enter the full name to search: ")
+    find_user_info(full_name)
