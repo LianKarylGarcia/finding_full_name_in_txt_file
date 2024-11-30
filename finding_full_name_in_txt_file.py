@@ -8,6 +8,10 @@ def find_user_info(full_name_to_find): # Define the function find_user_info
                     print("User found: ")
                 elif line.strip()[11:] == full_name_to_find: # Extract the name
                     print(line.strip())
+            
+            if not found:
+                print("User not found")
         
-    except:
+    except FileNotFoundError:
+        print("Error: 'user_info.txt' file not found.")
 
