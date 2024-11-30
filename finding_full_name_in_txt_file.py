@@ -5,10 +5,13 @@ def find_user_info(full_name_to_find): # Define the function find_user_info
             found = False # To track if the user is in the file
             for line in file: # Loop
                 if line.strip().startswith("Full Name: "): # Make sure line starts with "Full Name:"
-                    print("User found: ")
-                elif line.strip()[11:] == full_name_to_find: # Extract the name
-                    print(line.strip())
+                    name_in_file = line.strip()[11:]
             
+                # Compare it with the full name being searched
+                elif name_in_file == full_name_to_find:
+                        print(f"User found: {name_in_file}")
+                        found = True
+                        break  # Exit the loop after finding the user
             if not found:
                 print("User not found")
         
